@@ -4,7 +4,7 @@ const die = require('./lib/die.js')
 
 const log = require('@vardevs/log')({
     level: 2,
-    prefix: 'LINKER'
+    prefix: 'PKGS'
 })
 const { read, write } = require('@vardevs/io')
 
