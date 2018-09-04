@@ -13,12 +13,16 @@ const cmds = require('./lib/cmds.js')
 const repoDir = process.cwd()
 
 async function main(args = []) {
-    if (args.length === 0) die('No supported arguments')
-    
+    const binary = args.shift()
+    const script = args.shift()
+
     const cmd = args.shift()
-    cmds[cmd].call(this, repoDir)
+
+    if (!cmds.list.includes(cmd)) {
+        die(`No supported arguments, got "${cmd}"`)
+    }
+
+    cmds[cmd].call(this, repoDir, args)
 }
 
-const args = process.argv.filter(cmd => cmds.list.includes(cmd))
-
-main(args)
+main(process.argv)
