@@ -6,7 +6,6 @@ const log = require('@vardevs/log')({
     level: 2,
     prefix: 'PKGS'
 })
-const { read, write } = require('@vardevs/io')
 
 const cmds = require('./lib/cmds.js')
 
