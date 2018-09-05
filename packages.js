@@ -7,7 +7,7 @@ const die = require('./lib/die.js')
 
 const log = require('@vardevs/log')({
     level: require('./lib/loglevel.js'),
-    prefix: 'PKGS'
+    prefix: 'packages'
 })
 
 const { reverse } = require('./lib/colors.js')
@@ -18,6 +18,7 @@ const {
 } = require('./lib/mono.js')
 
 const cmds = require('./lib/cmds.js')
+const help = require('./lib/help.js')
 
 const repoDir = process.cwd()
 
@@ -58,10 +59,18 @@ async function setup(cwd) {
 }
 
 async function main(args = []) {
+    log.info(reverse(`     DHIS2 Packages     `))
+
     const binary = args.shift()
     const script = args.shift()
 
     const cmd = args.shift()
+
+    if (cmd === 'help') {
+        // special case when the user calls for help
+        help(args)
+        process.exit(0)
+    }
 
     await is_package(repoDir)
 
@@ -73,9 +82,7 @@ async function main(args = []) {
         die(`No supported arguments, got "${cmd}"`)
     }
 
-    log.info(reverse(`     DHIS2 Packages     `))
-
-    cmds[cmd].call(this, cwd, npm_yarn, args)
+    cmds[cmd].fn.call(this, cwd, npm_yarn, args)
 }
 
 // start it!
