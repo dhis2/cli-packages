@@ -1,3 +1,5 @@
+<!-- @format -->
+
 # packages
 
 Package helper for monorepos where packages are published from e.g.
@@ -5,14 +7,13 @@ Package helper for monorepos where packages are published from e.g.
 
 # features
 
-- monorepo support (packages in `${repo}/packages`)
-- creating links from inside `build/` directory
-- copies `package.json` from `${repo}` to `build/`
-- figures out interdependencies between packages
+-   monorepo support (packages in `${repo}/packages`)
+-   creating links from inside `build/` directory
+-   copies `package.json` from `${repo}` to `build/`
+-   figures out interdependencies between packages
 
 # todo
 
-- publish packages
-- tests!
-- figure out build order based on dependency graph
-
+-   publish packages
+-   tests!
+-   figure out build order based on dependency graph

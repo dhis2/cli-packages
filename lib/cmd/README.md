@@ -1,3 +1,5 @@
+<!-- @format -->
+
 # Commands
 
 A command is a plugin `module` which exports an object with two
@@ -30,7 +32,7 @@ the command line.
 
 A function which receives three parameters: `cwd`, `cmd`, and `args`.
 
-- `cwd` is the current working directory for the script
-- `cmd` is the runner to use, e.g. yarn or npm
-- `args` is any other parameters which were passed from the command
-  line.
+-   `cwd` is the current working directory for the script
+-   `cmd` is the runner to use, e.g. yarn or npm
+-   `args` is any other parameters which were passed from the command
+    line.

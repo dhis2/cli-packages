@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/** @format */
 
 const path = require('path')
 const fs = require('fs-extra')
@@ -7,15 +8,12 @@ const die = require('./lib/die.js')
 
 const log = require('@vardevs/log')({
     level: require('./lib/loglevel.js'),
-    prefix: 'packages'
+    prefix: 'packages',
 })
 
 const { reverse } = require('./lib/colors.js')
 
-const {
-    is_monorepo,
-    mono_path
-} = require('./lib/mono.js')
+const { is_monorepo, mono_path } = require('./lib/mono.js')
 
 const cmds = require('./lib/cmds.js')
 const help = require('./lib/help.js')
@@ -63,6 +61,8 @@ async function main(args = []) {
 
     const binary = args.shift()
     const script = args.shift()
+    log.trace(`binary: ${binary}`)
+    log.trace(`script: ${script}`)
 
     const cmd = args.shift()
 
