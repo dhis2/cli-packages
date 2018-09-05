@@ -1,9 +1,0 @@
-const cmds = require('./cmds.js')
-
-module.exports = async function (cwd, cmd, args) {
-    const cmd_docs = {}
-    console.log(cmds)
-    cmds.map(cmd => cmd_docs[cmd.id] = cmd.doc)
-    
-    console.log(cmd_docs)
-}
