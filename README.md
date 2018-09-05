@@ -7,7 +7,7 @@ Package helper for monorepos where packages are published from e.g.
 
 # examples
 
-##packages help
+## `packages help`
 
 ```
 [packages]      DHIS2 Packages
@@ -29,7 +29,7 @@ Package helper for monorepos where packages are published from e.g.
 [copy] wrote: build/package.json
 ```
 
-## packages exec COMMAND
+## `packages exec COMMAND`
 
 ```
 [packages]      DHIS2 Packages
@@ -65,7 +65,7 @@ webpack.config.js
 yarn.lock
 ```
 
-##packages link
+## `packages link`
 
 ```
 [packages]      DHIS2 Packages
