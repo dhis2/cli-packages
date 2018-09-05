@@ -6,7 +6,7 @@ properties: `id` and `fn`.
 ```
 module.exports = {
     id: 'command name',
-    fn: (cwd, args) => {}
+    fn: (cwd, cmd, args) => {}
 }
 ```
 
@@ -28,8 +28,9 @@ the command line.
 
 ## `fn`
 
-A function which receives two parameters: `cwd` and `args`.
+A function which receives three parameters: `cwd`, `cmd`, and `args`.
 
 - `cwd` is the current working directory for the script
+- `cmd` is the runner to use, e.g. yarn or npm
 - `args` is any other parameters which were passed from the command
   line.
