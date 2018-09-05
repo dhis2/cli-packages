@@ -3,7 +3,7 @@
 # Commands
 
 A command is a plugin `module` which exports an object with two
-properties: `id` and `fn`.
+properties: `doc`, `id`, and `fn`.
 
 ```
 module.exports = {
@@ -27,6 +27,27 @@ const cmds = [
 
 This is the identifier for the command, which is also what is used from
 the command line.
+
+## `doc`
+
+This contains the documentation for a given command. At the minimum a string which defines the usage, but preferably a template string which has the format:
+
+```
+doc: `usage: packages COMMAND ARGS
+
+tl;dr: this COMMAND does so and so with ARGS.
+
+...
+
+With certain ARGS the COMMAND might behave in weird ways, here are some examples:
+
+    ex. 1
+    ex. 2
+    ex. 3
+
+The COMMAND is monorepo aware.
+`
+```
 
 ## `fn`
 
