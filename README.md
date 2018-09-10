@@ -16,9 +16,6 @@ packages link
 ## for publish
 
 ```
-packages install
-packages link
-packages build
 packages publish <version>||major||minor
 ```
 
