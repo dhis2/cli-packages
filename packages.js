@@ -75,14 +75,16 @@ async function main(args = []) {
     await is_package(repoDir)
 
     const npm_yarn = await tool(repoDir)
-
     const cwd = await setup(repoDir)
 
     if (!cmds.list.includes(cmd)) {
         die(`No supported arguments, got "${cmd}"`)
     }
 
-    cmds[cmd].fn.call(this, cwd, npm_yarn, args)
+    cmds[cmd].fn.call(this, cwd, npm_yarn, args, {
+        is_monorepo: repoDir !== cwd,
+        root_dir: repoDir
+    })
 }
 
 // start it!
