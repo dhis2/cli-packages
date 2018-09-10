@@ -77,15 +77,41 @@ yarn.lock
 [link] [example-app] linked: ui
 ```
 
+## `packages publish`
+
+```
+[packages]      DHIS2 Packages
+[publish] [@dhis2/d2-ui] new release: 3.1.0
+[publish]
+[publish] [@dhis2/d2-ui-core] new release: 3.1.0
+[publish] [@dhis2/d2-ui-core] example-cra: @dhis2/d2-ui-core@3.1.0 => 3.1.0
+[publish] [@dhis2/d2-ui-core] @dhis2/d2-ui-app: @dhis2/d2-ui-core@3.1.0 => 3.1.0
+[publish] [@dhis2/d2-ui-core] @dhis2/d2-ui-expression-manager: @dhis2/d2-ui-core@3.1.0 => 3.1.0
+[publish] [@dhis2/d2-ui-core] @dhis2/d2-ui-forms: @dhis2/d2-ui-core@3.1.0 => 3.1.0
+[publish] [@dhis2/d2-ui-core] @dhis2/d2-ui-group-editor: @dhis2/d2-ui-core@3.1.0 => 3.1.0
+[publish] [@dhis2/d2-ui-core] @dhis2/d2-ui-header-bar: @dhis2/d2-ui-core@3.1.0 => 3.1.0
+[publish] [@dhis2/d2-ui-core] @dhis2/d2-ui-icon-picker: @dhis2/d2-ui-core@3.1.0 => 3.1.0
+[publish] [@dhis2/d2-ui-core] @dhis2/d2-ui-interpretations: @dhis2/d2-ui-core@3.1.0 => 3.1.0
+[publish] [@dhis2/d2-ui-core] @dhis2/d2-ui-legend: @dhis2/d2-ui-core@3.1.0 => 3.1.0
+[publish] [@dhis2/d2-ui-core] @dhis2/d2-ui-org-unit-select: @dhis2/d2-ui-core@3.1.0 => 3.1.0
+[publish] [@dhis2/d2-ui-core] @dhis2/d2-ui-org-unit-tree: @dhis2/d2-ui-core@3.1.0 => 3.1.0
+[publish] [@dhis2/d2-ui-core] @dhis2/d2-ui-sharing-dialog: @dhis2/d2-ui-core@3.1.0 => 3.1.0
+[publish] [@dhis2/d2-ui-core] @dhis2/d2-ui-table: @dhis2/d2-ui-core@3.1.0 => 3.1.0
+[publish] [@dhis2/d2-ui-core] @dhis2/d2-ui-translation-dialog: @dhis2/d2-ui-core@3.1.0 => 3.1.0
+```
+
+## `packages build`
+
+Alias for `packages exec <yarn/npm> build`.
+
+## `packages install`
+
+Alias for `packages exec <yarn/npm> install`, but also runs the command for the root packages in the case of monorepos to install the development dependencies.
+
 # features
 
 -   monorepo support (packages in `${repo}/packages`)
 -   creating links from inside `build/` directory
 -   copies `package.json` from `${repo}` to `build/`
 -   figures out interdependencies between packages
-
-# todo
-
--   publish packages
--   tests!
--   figure out build order based on dependency graph
+-   publishes from build directory for a flat package structure with transpiled sources
