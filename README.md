@@ -5,6 +5,25 @@
 Package helper for monorepos where packages are published from e.g.
 `build` instead of the repository root.
 
+## for development
+
+```
+cd $repo
+packages install
+packages build
+packages link
+```
+
+## for publish
+
+```
+cd $repo
+packages install
+packages link
+packages build
+packages publish <version>||major||minor
+```
+
 # examples
 
 ## `packages help`
