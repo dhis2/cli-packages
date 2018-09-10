@@ -8,7 +8,7 @@ properties: `doc`, `id`, and `fn`.
 ```
 module.exports = {
     id: 'command name',
-    fn: (cwd, cmd, args) => {}
+    fn: (cwd, cmd, args, opts) => {}
 }
 ```
 
@@ -51,9 +51,10 @@ The COMMAND is monorepo aware.
 
 ## `fn`
 
-A function which receives three parameters: `cwd`, `cmd`, and `args`.
+A function which receives four parameters: `cwd`, `cmd`, `args`, `opts`.
 
 -   `cwd` is the current working directory for the script
 -   `cmd` is the runner to use, e.g. yarn or npm
 -   `args` is any other parameters which were passed from the command
     line.
+-   `opts` contains additional properties which are needed in the commands.
