@@ -8,7 +8,6 @@ Package helper for monorepos where packages are published from e.g.
 ## for development
 
 ```
-cd $repo
 packages install
 packages build
 packages link
@@ -17,7 +16,6 @@ packages link
 ## for publish
 
 ```
-cd $repo
 packages install
 packages link
 packages build
