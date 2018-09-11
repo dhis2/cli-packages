@@ -116,7 +116,7 @@ yarn.lock
 
 ## `packages build`
 
-Alias for `packages exec <yarn/npm> build`.
+Alias for `packages exec <yarn/npm> run build`.
 
 ## `packages install`
 
