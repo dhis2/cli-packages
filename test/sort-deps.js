@@ -171,25 +171,93 @@ test('sort build order for d2-ui dep graph', t => {
     const graph = sort(deps)
 
     t.equals(graph[0].name, '@dhis2/d2-ui-core', 'core: has no dependencies')
-    t.equals(graph[1].name, '@dhis2/d2-ui-expression-manager', 'expression manager: depends on core')
+    t.equals(
+        graph[1].name,
+        '@dhis2/d2-ui-expression-manager',
+        'expression manager: depends on core'
+    )
     t.equals(graph[2].name, '@dhis2/d2-ui-forms', 'forms: depends on core')
-    t.equals(graph[3].name, '@dhis2/d2-ui-formula-editor', 'formula editor: no dependencies')
-    t.equals(graph[4].name, '@dhis2/d2-ui-group-editor', 'group editor: depends on core')
-    t.equals(graph[5].name, '@dhis2/d2-ui-icon-picker', 'icon picker: depends on core')
-    t.equals(graph[6].name, '@dhis2/d2-ui-mentions-wrapper', 'mentions wrapper: has no dependencies')
-    t.equals(graph[7].name, '@dhis2/d2-ui-org-unit-select', 'org unit select: depends on core')
-    t.equals(graph[8].name, '@dhis2/d2-ui-org-unit-tree', 'org unit tree: depends on core')
-    t.equals(graph[9].name, '@dhis2/d2-ui-rich-text', 'rich text: has no dependencies')
-    t.equals(graph[10].name, '@dhis2/d2-ui-sharing-dialog', 'sharing dialog: depends on core')
-    t.equals(graph[11].name, '@dhis2/d2-ui-translation-dialog', 'translation dialog: depends on core')
+    t.equals(
+        graph[3].name,
+        '@dhis2/d2-ui-formula-editor',
+        'formula editor: no dependencies'
+    )
+    t.equals(
+        graph[4].name,
+        '@dhis2/d2-ui-group-editor',
+        'group editor: depends on core'
+    )
+    t.equals(
+        graph[5].name,
+        '@dhis2/d2-ui-icon-picker',
+        'icon picker: depends on core'
+    )
+    t.equals(
+        graph[6].name,
+        '@dhis2/d2-ui-mentions-wrapper',
+        'mentions wrapper: has no dependencies'
+    )
+    t.equals(
+        graph[7].name,
+        '@dhis2/d2-ui-org-unit-select',
+        'org unit select: depends on core'
+    )
+    t.equals(
+        graph[8].name,
+        '@dhis2/d2-ui-org-unit-tree',
+        'org unit tree: depends on core'
+    )
+    t.equals(
+        graph[9].name,
+        '@dhis2/d2-ui-rich-text',
+        'rich text: has no dependencies'
+    )
+    t.equals(
+        graph[10].name,
+        '@dhis2/d2-ui-sharing-dialog',
+        'sharing dialog: depends on core'
+    )
+    t.equals(
+        graph[11].name,
+        '@dhis2/d2-ui-translation-dialog',
+        'translation dialog: depends on core'
+    )
     t.equals(graph[12].name, '@dhis2/d2-ui-app', 'app: depends on core')
-    t.equals(graph[13].name, '@dhis2/d2-ui-favorites-dialog', 'favorites dialog: depends on sharing dialog')
-    t.equals(graph[14].name, '@dhis2/d2-ui-favorites-menu', 'favorites menu: depends on favorites dialog, sharing dialog, translation dialog')
-    t.equals(graph[15].name, '@dhis2/d2-ui-file-menu', 'file menu: depends on favorites dialog, sharing dialog, translation dialog')
-    t.equals(graph[16].name, '@dhis2/d2-ui-header-bar', 'header bar: depends on app and core')
-    t.equals(graph[17].name, '@dhis2/d2-ui-interpretations', 'interpretations: depends on core, mentions wrapper, sharing dialog')
-    t.equals(graph[18].name, '@dhis2/d2-ui-table', 'table: depends on core and translation dialog')
-    t.equals(graph[19].name, '@dhis2/d2-ui-legend', 'legend: depends on core, forms, table')
+    t.equals(
+        graph[13].name,
+        '@dhis2/d2-ui-favorites-dialog',
+        'favorites dialog: depends on sharing dialog'
+    )
+    t.equals(
+        graph[14].name,
+        '@dhis2/d2-ui-favorites-menu',
+        'favorites menu: depends on favorites dialog, sharing dialog, translation dialog'
+    )
+    t.equals(
+        graph[15].name,
+        '@dhis2/d2-ui-file-menu',
+        'file menu: depends on favorites dialog, sharing dialog, translation dialog'
+    )
+    t.equals(
+        graph[16].name,
+        '@dhis2/d2-ui-header-bar',
+        'header bar: depends on app and core'
+    )
+    t.equals(
+        graph[17].name,
+        '@dhis2/d2-ui-interpretations',
+        'interpretations: depends on core, mentions wrapper, sharing dialog'
+    )
+    t.equals(
+        graph[18].name,
+        '@dhis2/d2-ui-table',
+        'table: depends on core and translation dialog'
+    )
+    t.equals(
+        graph[19].name,
+        '@dhis2/d2-ui-legend',
+        'legend: depends on core, forms, table'
+    )
 })
 
 test('sort dep graph with no interdeps', t => {
@@ -198,15 +266,15 @@ test('sort dep graph with no interdeps', t => {
     const sdeps = [
         {
             name: 'a',
-            depends: []
+            depends: [],
         },
         {
             name: 'b',
-            depends: []
+            depends: [],
         },
         {
             name: 'c',
-            depends: []
+            depends: [],
         },
     ]
     const graph = sort(sdeps)
@@ -222,15 +290,15 @@ test('sort simple dep graph with interdeps', t => {
     const sdeps = [
         {
             name: 'a',
-            depends: ['c']
+            depends: ['c'],
         },
         {
             name: 'b',
-            depends: ['a']
+            depends: ['a'],
         },
         {
             name: 'c',
-            depends: []
+            depends: [],
         },
     ]
     const graph = sort(sdeps)
