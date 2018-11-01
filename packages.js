@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-/** @format */
 
 const path = require('path')
 const fs = require('fs-extra')
@@ -83,7 +82,8 @@ async function main(args = []) {
 
     cmds[cmd].fn.call(this, cwd, npm_yarn, args, {
         is_monorepo: repoDir !== cwd,
-        root_dir: repoDir
+        cwd: cwd,
+        root_dir: repoDir,
     })
 }
 
