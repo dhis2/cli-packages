@@ -14,7 +14,6 @@ const { reverse } = require('./lib/colors.js')
 const { is_monorepo, mono_path } = require('./lib/mono.js')
 
 const cmds = require('./lib/cmds.js')
-const help = require('./lib/help.js')
 
 const repoDir = process.cwd()
 
@@ -54,37 +53,24 @@ async function setup(cwd) {
     return pwd
 }
 
-async function main(args = []) {
+async function main() {
     log.info(reverse(`     DHIS2 Packages     `))
-
-    const binary = args.shift()
-    const script = args.shift()
-    log.trace(`binary: ${binary}`)
-    log.trace(`script: ${script}`)
-
-    const cmd = args.shift()
-
-    if (cmd === 'help') {
-        // special case when the user calls for help
-        help(args)
-        process.exit(0)
-    }
 
     await is_package(repoDir)
 
     const npm_yarn = await tool(repoDir)
     const cwd = await setup(repoDir)
 
-    if (!cmds.list.includes(cmd)) {
-        die(`No supported arguments, got "${cmd}"`)
-    }
-
-    cmds[cmd].fn.call(this, cwd, npm_yarn, args, {
-        is_monorepo: repoDir !== cwd,
+    cmds.config({
         cwd: cwd,
+        is_monorepo: repoDir !== cwd,
         root_dir: repoDir,
+        tool: npm_yarn,
     })
+
+    const argv = cmds.argv
+    console.log(argv)
 }
 
 // start it!
-main(process.argv)
+main()
