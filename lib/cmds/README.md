@@ -1,6 +1,5 @@
 # Commands
 
-
 ```
 exports.command = ''
 

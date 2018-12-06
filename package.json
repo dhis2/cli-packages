@@ -17,7 +17,6 @@
   "author": "Viktor Varland",
   "license": "BSD-3-Clause",
   "dependencies": {
-    "@dhis2/code-style": "^1.6.3",
     "@vardevs/io": "^1.5.0",
     "@vardevs/log": "^1.0.0",
     "fs-extra": "^7.0.1",
