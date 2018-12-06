@@ -10,7 +10,6 @@ const log = require('@vardevs/log')({
 })
 
 const { reverse } = require('./lib/colors.js')
-
 const { is_monorepo, mono_path } = require('./lib/mono.js')
 
 const cmds = require('./lib/cmds.js')
@@ -69,7 +68,7 @@ async function main() {
     })
 
     const argv = cmds.argv
-    console.log(argv)
+    log.debug(argv)
 }
 
 // start it!
