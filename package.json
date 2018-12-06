@@ -4,8 +4,7 @@
   "description": "Helps manage package links in a monorepo",
   "bin": "./packages.js",
   "scripts": {
-    "test": "tape test/**/*",
-    "format": "code-style"
+    "test": "tape test/**/*"
   },
   "keywords": [
     "DHIS2",
