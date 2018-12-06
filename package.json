@@ -1,6 +1,6 @@
 {
   "name": "@dhis2/packages",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Helps manage package links in a monorepo",
   "bin": "./packages.js",
   "scripts": {
