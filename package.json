@@ -4,7 +4,9 @@
   "description": "Helps manage package links in a monorepo",
   "bin": "./packages.js",
   "scripts": {
-    "test": "tape test/**/*"
+    "test": "tape test/**/*",
+    "release": "./packages.js release",
+    "format": "./packages.js code-style"
   },
   "keywords": [
     "DHIS2",
@@ -16,6 +18,7 @@
   "author": "Viktor Varland",
   "license": "BSD-3-Clause",
   "dependencies": {
+    "@dhis2/code-style": "^1.7.0",
     "@vardevs/io": "^1.5.0",
     "@vardevs/log": "^1.0.0",
     "fs-extra": "^7.0.1",
@@ -26,5 +29,14 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "devDependencies": {
+    "husky": "^1.2.0"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "./packages.js commit-style",
+      "pre-commit": "./packages.js code-style"
+    }
   }
 }
