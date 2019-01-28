@@ -1,12 +1,14 @@
 {
-  "name": "@dhis2/packages",
-  "version": "1.3.0",
-  "description": "Helps manage package links in a monorepo",
-  "bin": "./packages.js",
+  "name": "@dhis2/cli-packages",
+  "version": "2.0.0",
+  "description": "D2 CLI module for managing npm packages",
+  "bin": {
+    "d2-packages": "bin/d2-packages"
+  },
   "scripts": {
     "test": "tape test/**/*",
-    "release": "./packages.js release",
-    "format": "./packages.js code-style"
+    "release": "./bin/d2-packages release",
+    "format": "d2-style js"
   },
   "keywords": [
     "DHIS2",
@@ -15,28 +17,28 @@
     "link",
     "monorepo"
   ],
-  "author": "Viktor Varland",
+  "author": "Viktor Varland <viktor@dhis2.org>",
   "license": "BSD-3-Clause",
   "dependencies": {
-    "@dhis2/code-style": "^1.7.1",
+    "@dhis2/cli-helpers-engine": "^0.10.1",
     "@vardevs/io": "^1.5.0",
     "@vardevs/log": "^1.0.0",
     "fs-extra": "^7.0.1",
     "semver": "^5.6.0",
     "standard-version": "^4.4.0",
-    "tape": "^4.9.1",
-    "yargs": "^12.0.5"
+    "tape": "^4.9.1"
   },
   "publishConfig": {
     "access": "public"
   },
   "devDependencies": {
+    "@dhis2/cli-style": "^0.10.1",
     "husky": "^1.2.0"
   },
   "husky": {
     "hooks": {
-      "commit-msg": "./packages.js commit-style",
-      "pre-commit": "./packages.js code-style"
+      "commit-msg": "d2-style commit",
+      "pre-commit": "d2-style js"
     }
   }
 }
