@@ -1,4 +1,5 @@
 # 📦 packages
+[![dhis2-cli Compatible](https://img.shields.io/badge/dhis2-cli-ff69b4.svg)](https://github.com/dhis2/cli)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org) [![Greenkeeper badge](https://badges.greenkeeper.io/dhis2/cli-packages.svg)](https://greenkeeper.io/)
 
 Standardised tool for dealing with DHIS2 Packages.
