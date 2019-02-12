@@ -32,7 +32,7 @@
     "access": "public"
   },
   "devDependencies": {
-    "@dhis2/cli-style": "^0.10.1",
+    "@dhis2/cli-style": "^2.0.1",
     "husky": "^1.2.0"
   },
   "husky": {
