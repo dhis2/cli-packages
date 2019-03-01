@@ -7,8 +7,7 @@
   },
   "scripts": {
     "test": "tape test/**/*",
-    "release": "./bin/d2-packages release",
-    "format": "d2-style js"
+    "release": "./bin/d2-app release"
   },
   "keywords": [
     "DHIS2",
@@ -32,13 +31,13 @@
     "access": "public"
   },
   "devDependencies": {
-    "@dhis2/cli-style": "^2.0.1",
+    "@dhis2/cli": "^0.11.0",
     "husky": "^1.2.0"
   },
   "husky": {
     "hooks": {
-      "commit-msg": "d2-style commit",
-      "pre-commit": "d2-style js"
+      "commit-msg": "d2 style commit check",
+      "pre-commit": "d2 style js apply"
     }
   }
 }
