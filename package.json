@@ -31,7 +31,7 @@
     "access": "public"
   },
   "devDependencies": {
-    "@dhis2/cli": "^0.11.0",
+    "@dhis2/cli": "^0.12.0",
     "husky": "^1.2.0"
   },
   "husky": {
